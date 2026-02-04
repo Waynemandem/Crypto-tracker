@@ -61,6 +61,12 @@ const filteredCoins = coins.filter((coin) =>
       />
 
       <CoinList coins={filteredCoins} />
+      <footer className="footer">
+          <p>
+            Data from CoinGecko · Built by Wayne
+          </p>
+      </footer>
+
     </div>
   );
 }

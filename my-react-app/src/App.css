@@ -108,6 +108,13 @@ input::placeholder {
   border-radius: 10px;
 }
 
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}
+
 
 
 @media (max-width: 600px) {
@@ -121,3 +128,4 @@ input::placeholder {
     text-align: left;
   }
 }
+
