@@ -1,6 +1,6 @@
 function CoinList({ coins }) {
   if (coins.length === 0) {
-    return <p>No coins found.</p>;
+    return <p className="empty">No coins found.</p>;
   }
 
   return (

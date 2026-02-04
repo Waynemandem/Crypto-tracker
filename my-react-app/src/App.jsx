@@ -34,7 +34,10 @@ function App() {
 }, []);
    
    if (loading) {
-  return <p>Loading crypto data...</p>;
+  return (<div>
+    <p>Fetching Market data...</p>
+    </div>
+  );
 }
 
 if (error) {
@@ -56,7 +59,7 @@ const filteredCoins = coins.filter((coin) =>
       value={search}
       onChange={(e) => setSearch(e.target.value)}
       />
-      
+
       <CoinList coins={filteredCoins} />
     </div>
   );
