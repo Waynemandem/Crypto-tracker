@@ -1,11 +1,13 @@
 import './App.css';
-import CoinList from './compnents/CoinList';
+import CoinList from './components/CoinList';
 import { useEffect, useState } from 'react';
 
 function App() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const [search, setSearch] = useState('');
 
 
   useEffect(() => {
@@ -39,13 +41,26 @@ if (error) {
   return <p>Error: {error}</p>;
 }
 
-
-   return (
-  <div>
-    <h1>Crypto Tracker</h1>
-    <CoinList coins={coins} />
-  </div>
+const filteredCoins = coins.filter((coin) =>
+  coin.name.toLowerCase().includes(search.toLowerCase())
 );
+
+
+  return (
+    <div className="App">
+      <h1>Crypto Tracker</h1>
+
+      <input 
+      type="text"
+      placeholder="Search Cryptocurrency"
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      />
+      
+      <CoinList coins={filteredCoins} />
+    </div>
+  );
 }
+
 
 export default App;
