@@ -9,7 +9,7 @@
 
 [build.environment]
   # Node version for Netlify build
-  NODE_VERSION = "18"
+  NODE_VERSION = "20.19.0"
 
 # Cache settings for better performance
 [[headers]]

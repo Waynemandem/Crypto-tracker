@@ -207,7 +207,7 @@ Total Compressed Size: ~64.5 KB
 - Accessibility attributes
 - Clean separation of search UI
 
-### CoinCard.jsx
+### CoinCard.jsxhow
 - Individual cryptocurrency display
 - Dynamic styling based on price change
 - Formatted currency with locale
