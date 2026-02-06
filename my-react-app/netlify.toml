@@ -1,0 +1,31 @@
+# Netlify Configuration for Crypto Tracker
+# Ensures proper deployment and routing for React SPA
+
+[build]
+  # Command to build the application
+  command = "npm run build"
+  # Directory containing the built files to deploy
+  publish = "dist"
+
+[build.environment]
+  # Node version for Netlify build
+  NODE_VERSION = "18"
+
+# Cache settings for better performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Cache busting for assets
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    # Don't cache HTML to ensure fresh content on page loads
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    # Aggressively cache immutable assets (they have hash in filename)
+    Cache-Control = "public, max-age=31536000, immutable"
